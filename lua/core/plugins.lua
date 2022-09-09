@@ -42,6 +42,13 @@ local plugin_table = {
     end,
   },
 
+  -- UI Component Library
+  -- TODO: Configure this
+  -- ["MunifTanjim/nui.nvim"] = {
+  --   config = function()
+  --     require "configs.nui"
+  --   end,
+  -- },
 
 
 
