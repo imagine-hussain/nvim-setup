@@ -25,7 +25,7 @@ local function dump(o)
     end
 end
 
-print("TABLE DUMP:" .. dump(settings_table))
+-- print("TABLE DUMP:" .. dump(settings_table))
 
 
 local function load_settings(settings)

@@ -14,7 +14,11 @@ local plugin_table = {
   ["nvim-lua/popup.nvim"] = {},
 
   -- Indent detection
-  ["tpope/vim-sleuth"] = {},
+  ["tpope/vim-sleuth"] = {
+    event = { "BufRead", "BufNewFile", "BufEnter" },
+    config = function ()
+    end,
+  },
 
   -- treesitter syntax highlighting
   ["nvim-treesitter/nvim-treesitter"] = {
@@ -60,10 +64,31 @@ local plugin_table = {
     end,
   },
 
+  -- Better way to move splits: moves the "split line"
   ["mrjones2014/smart-splits.nvim"] = {
     module = "smart_splits",
     config = function()
       require "configs.smart_splits"
+    end,
+  },
+
+  -- Close buffers without destroying the window
+  ["famiu/bufdelete.nvim"] = {
+    cmd = { "Bdelete", "Bwipeout" },
+  },
+
+  -- Icons
+  ["kyazdani42/nvim-web-devicons"] = {
+    module = "nvim-web-devicons",
+    config = function()
+      require "configs.icons"
+    end,
+  },
+
+  -- Scope Buffers to be Restricted to Tabs: makes bufferline cleaner
+  ["tiagovla/scope.nvim"] = {
+    config = function()
+      require "configs.scope"
     end,
   },
 
