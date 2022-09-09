@@ -47,12 +47,10 @@ local plugin_table = {
   },
 
   -- UI Component Library
-  -- TODO: Configure this
-  -- ["MunifTanjim/nui.nvim"] = {
-  --   config = function()
-  --     require "configs.nui"
-  --   end,
-  -- },
+  -- TODO: Configure this - used by neotree (probs others too)
+  ["MunifTanjim/nui.nvim"] = {
+    module = "nui",
+  },
 
 
   -- CursorHold bug fix (speed is key)
@@ -95,6 +93,19 @@ local plugin_table = {
   ["tiagovla/scope.nvim"] = {
     config = function()
       require "configs.scope"
+    end,
+  },
+
+  ["nvim-neo-tree/neo-tree.nvim"] = {
+    cmd = { "Neotree" },
+    module = { "neotree" },
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require "configs.neotree"
     end,
   },
 
