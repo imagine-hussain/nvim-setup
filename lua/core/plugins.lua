@@ -51,7 +51,21 @@ local plugin_table = {
   -- },
 
 
+  -- CursorHold bug fix (speed is key)
+  ["antoinemadec/FixCursorHold.nvim"] = {
+    event = { "BufRead", "BufNewFile" },
+    config = function()
+      -- Time in ms to update
+      vim.g.cursorhold_updatetime = 50 -- default rec 100
+    end,
+  },
 
+  ["mrjones2014/smart-splits.nvim"] = {
+    module = "smart_splits",
+    config = function()
+      require "configs.smart_splits"
+    end,
+  },
 
 
   --
