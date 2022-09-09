@@ -5,13 +5,32 @@ local plugin_table = {
   -- speed go brrrr
   ["lewis6991/impatient.nvim"] = {},
 
-  -- lua functions stuff
+  -- lua functions stuff - dependency for many plugins
   ["nvim-lua/plenary.nvim"] = {
     module = "plenary"
   },
 
   -- Popup api
   ["nvim-lua/popup.nvim"] = {},
+
+  -- treesitter syntax highlighting
+  ["nvim-treesitter/nvim-treesitter"] = {
+    run = ":TSUpdate",
+    event = { "BufRead", "BufNewFile" },
+    cmd = {
+      "TSInstall",
+      "TSInstallInfo",
+      "TSInstallSync",
+      "TSUninstall",
+      "TSUpdate",
+      "TSUpdateSync",
+      "TSDisableAll",
+      "TSEnableAll",
+    },
+    config = function()
+      require "configs.treesitter"
+    end,
+  },
 
 
   --

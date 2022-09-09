@@ -8,9 +8,8 @@ local settings_table = {
         relativenumber = true, -- Show relative numberline
     },
     -- Global vars / Settings; Equiv to `let g:key = value`
-    g = {
-
-    }
+    -- g = {
+    -- }
 }
 
 local function dump(o)
