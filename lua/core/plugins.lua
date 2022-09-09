@@ -104,6 +104,11 @@ local plugin_table = {
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     },
+    setup = function()
+      -- Dont actually know what the legacy stuff was, quick setup
+      -- recommended adding this
+      vim.g.neo_tree_remove_legacy_commands = true
+    end,
     config = function()
       require "configs.neotree"
     end,
