@@ -76,6 +76,12 @@ local plugin_table = {
   ["famiu/bufdelete.nvim"] = {
     cmd = { "Bdelete", "Bwipeout" },
   },
+  -- Bufferline
+  ["akinsho/bufferline.nvim"] = {
+    config = function()
+      require "configs.bufferline"
+    end,
+  },
 
   -- Icons
   ["kyazdani42/nvim-web-devicons"] = {
@@ -146,4 +152,5 @@ local function init_plugins(packer)
 end
 
 local packer = init_packer()
+
 init_plugins(packer)
