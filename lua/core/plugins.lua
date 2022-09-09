@@ -13,6 +13,9 @@ local plugin_table = {
   -- Popup api
   ["nvim-lua/popup.nvim"] = {},
 
+  -- Indent detection
+  ["tpope/vim-sleuth"] = {},
+
   -- treesitter syntax highlighting
   ["nvim-treesitter/nvim-treesitter"] = {
     run = ":TSUpdate",
@@ -31,6 +34,17 @@ local plugin_table = {
       require "configs.treesitter"
     end,
   },
+
+  -- Notification Manager
+  ["rcarriga/nvim-notify"] = {
+    config = function()
+      require "configs.notify"
+    end,
+  },
+
+
+
+
 
 
   --
