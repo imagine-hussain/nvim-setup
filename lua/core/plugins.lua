@@ -1,3 +1,6 @@
+local utils = require "configs.utils"
+local add_cmp_source = utils.add_cmp_source
+
 local plugin_table = {
   -- Plugin management
   ["wbthomason/packer.nvim"] = {},
@@ -37,6 +40,11 @@ local plugin_table = {
     config = function()
       require "configs.treesitter"
     end,
+  },
+
+  -- Autoclose and rename html tags
+  ["windwp/nvim-ts-autotag"] = {
+    after = "nvim-treesitter",
   },
 
   -- Notification Manager
@@ -96,6 +104,14 @@ local plugin_table = {
     end,
   },
 
+  -- Statusline: TODO:
+  ["feline-nvim/feline.nvim"] = {
+    config = function()
+      require "configs.feline"
+    end,
+  },
+
+  -- Filtree
   ["nvim-neo-tree/neo-tree.nvim"] = {
     cmd = { "Neotree" },
     module = { "neotree" },
@@ -114,14 +130,65 @@ local plugin_table = {
     end,
   },
 
+  -- Use TS to better understand commentstrings
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = {
+    after = "nvim-treesitter",
+    config = function ()
+      require "configs.ts-context-commentstring"
+    end,
+  },
+
+  -- Coloured Highlights for Parenthesis
+  ["p00f/nvim-ts-rainbow"] = { after = "nvim-treesitter" },
+
+
+  --
+  -- Snippets
+  -- Default Snippet Pack
+  ["rafamadriz/friendly-snippets"] = { opt = true },
+  -- Actaul Engine
+  ["L3MON4D3/LuaSnip"] = {
+    module = "luasnip",
+    config = function()
+      require "configs.luasnip"
+    end,
+  },
+  
+  --
+  --
+  -- autocompletion engine - needed by luasnip and lsp
+  -- Configured afterwards
+  ["hrsh7th/nvim-cmp"] = {},
+  -- Luasnip source for cmp
+  ["saadparwaiz1/cmp_luasnip"] = { },
+  -- Buffer completion source
+  ["hrsh7th/cmp-buffer"] = { },
+  -- Path completion source
+  ["hrsh7th/cmp-path"] = { },
+  -- LSP completion source
+  ["hrsh7th/cmp-nvim-lsp"] = { },
+
+  --
+  -- Lsp
+  --
+  -- Built-in LSP
+  ["neovim/nvim-lspconfig"] = { event = "VimEnter" },
+  -- Lsp Installer
+  ["williamboman/nvim-lsp-installer"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "configs.nvim-lsp-installer"
+      require "configs.lsp"
+    end,
+  },
+
+
+
 
   --
   -- Colors
   --
   ["sainnhe/gruvbox-material"] = {
-    -- config = function()
-    --   require "configs.colours"
-    -- end,
   }
 }
 
@@ -170,3 +237,4 @@ end
 local packer = init_packer()
 
 init_plugins(packer)
+require ("configs.cmp")
