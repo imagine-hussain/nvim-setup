@@ -1,5 +1,6 @@
 # nvim-setup
 starting from scratch because i have broken everything
+update: nvm, i have fixed my setup, i will revisit this soon:tm:
 
 ## Dependencies
 
