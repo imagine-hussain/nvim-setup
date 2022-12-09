@@ -15,13 +15,10 @@ settings_table["g"] = {
     mapleader = " ", -- Leader - global
 }
 
-utils.print_err("in settings")
 -- print("TABLE DUMP:" .. dump(settings_table))
 
 
 utils.apply_settings(settings_table)
-
-utils.print_err("finish settings")
 
 -- local function dump(o) if type(o) == 'table' then
 --        local s = '{ '

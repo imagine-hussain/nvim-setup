@@ -1,5 +1,4 @@
 function utils.apply_mappings(mappings)
-    utils.print_err("called in map")
     for mode, maps in pairs(mappings) do
         for trigger_key, config in pairs(maps) do
             if config then
@@ -22,7 +21,6 @@ function utils.apply_mappings(mappings)
 end
 
 function utils.apply_settings(settings)
-    utils.print_err("setting UTILS:")
     for scope, scoped_option_table in pairs(settings) do
         for setting, value in pairs(scoped_option_table) do
             vim[scope][setting] = value
@@ -38,9 +36,4 @@ end
 
 function utils.print_err(err)
     vim.api.nvim_err_writeln(err)
-end
-
-function utils.plugin_exists(plugin)
-    -- `packer_plugins` will be global defined by packer
-    return packer_plugins ~= nil and packer_plugins[plugin] ~= nil
 end

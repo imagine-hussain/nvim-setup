@@ -5,7 +5,6 @@ local exists = utils.plugin_exists
 
 -- Leader
 maps[""]["<Space>"] = "<Nop>"
-utils.print_err("in map")
 
 -- QOL Defaults
 maps.n["<leader>w"] = { "<cmd>w<CR>" }
@@ -53,5 +52,11 @@ maps.n["<leader>/"] = {
 maps.v["<leader>/"] = {
     "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
 }
+
+-- Neotree
+maps.n["<leader>E"] = { "<cmd>Neotree left<cr>", desc = "Toggle Explorer" }
+maps.n["<leader>O"] = { "<cmd>Neotree float<cr>", desc = "Toggle Explorer" }
+maps.n["<leader>e"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" }
+maps.n["<leader>o"] = { "<cmd>Neotree focus<cr>", desc = "Focus Explorer" }
 
 utils.apply_mappings(maps)

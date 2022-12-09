@@ -192,9 +192,9 @@ local plugin_table = {
 
   --
   -- Colors
-  --
-  ["sainnhe/gruvbox-material"] = {
-  }
+  -- (Don't config here, see colours.lua)
+  ["sainnhe/gruvbox-material"] = {},
+  ["rebelot/kanagawa.nvim"] = {},
 }
 
 local packer_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
@@ -243,4 +243,3 @@ local packer = init_packer()
 
 init_plugins(packer)
 -- require ("configs.cmp")
-utils.print_err("finish plugs")
