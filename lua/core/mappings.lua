@@ -35,5 +35,8 @@ maps.n["<S-l>"] = { "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer tab" }
 maps.n["<S-h>"] = { "<cmd>BufferLineCyclePrev<cr>", desc = "Previous buffer tab" }
 maps.n[">b"] = { "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer tab right" }
 maps.n["<b"] = { "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer tab left" }
+-- Default vim version: use in case of emergency (bufferline broke)
+-- maps.n["<S-l>"] = { "<cmd>bnext<cr>", desc = "Next buffer" }
+-- maps.n["<S-h>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" }
 
 utils.apply_mappings(maps)
