@@ -79,9 +79,8 @@ local plugin_table = {
   },
 
   -- Close buffers without destroying the window
-  ["famiu/bufdelete.nvim"] = {
-    -- cmd = { "Bdelete", "Bwipeout" },
-  },
+  ["famiu/bufdelete.nvim"] = {},
+
   -- Bufferline
   ["akinsho/bufferline.nvim"] = {
     config = function()
@@ -127,6 +126,12 @@ local plugin_table = {
     end,
     config = function()
       require "configs.neotree"
+    end,
+  },
+
+  ["numToStr/Comment.nvim"] = {
+    config = function()
+      require "configs.comment"
     end,
   },
 

@@ -39,4 +39,19 @@ maps.n["<b"] = { "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer tab left" }
 -- maps.n["<S-l>"] = { "<cmd>bnext<cr>", desc = "Next buffer" }
 -- maps.n["<S-h>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" }
 
+
+-- Navigate Tabs
+maps.n["<leader>tn"] = { "<cmd>tabnew<cr>", desc = "New tab" }
+maps.n["<leader>tc"] = { "<cmd>tabclose<cr>", desc = "Close tab" }
+
+-- Comment (using Comment.nvim)
+maps.n["<leader>/"] = {
+    function()
+        require("Comment.api").toggle.linewise()
+    end,
+}
+maps.v["<leader>/"] = {
+    "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+}
+
 utils.apply_mappings(maps)
