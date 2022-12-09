@@ -14,7 +14,6 @@ function utils.apply_mappings(mappings)
                 if command == nil then
                     command = "nil"
                 end
-                utils.print_err("Mapping: " .. mode .. " " .. trigger_key .. " " .. command)
                 -- https://github.com/neovim/neovim/pull/16591
                 vim.keymap.set(mode, trigger_key, command, config)
             end
@@ -23,9 +22,9 @@ function utils.apply_mappings(mappings)
 end
 
 function utils.apply_settings(settings)
-    for scope, option_list in ipairs(settings) do
-        for setting, value in pairs(option_list) do
-            print(setting .. value .. "\n")
+    utils.print_err("setting UTILS:")
+    for scope, scoped_option_table in pairs(settings) do
+        for setting, value in pairs(scoped_option_table) do
             vim[scope][setting] = value
         end
     end
