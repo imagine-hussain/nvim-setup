@@ -1,3 +1,11 @@
+local utils_ok, utils = pcall(require, "core.utils")
+if not utils_ok then
+  vim.api.nvim_err_writeln("Failed to load core.utils")
+  return
+end
+
+_G.utils = utils
+
 local function load_fail_error(file, err)
   vim.api.nvim_err_writeln(
     "Failed to load " .. file .. "\n\n" .. "Error Message: " .. err

@@ -1,10 +1,9 @@
 # nvim-setup
-starting from scratch because i have broken everything
-update: nvm, i have fixed my setup, i will revisit this soon:tm:
-
+starting from scratch because i have broken everything and nvim 0.8 requires extra work
 ## Dependencies
 
-- Packer (plugin manager) - Will automatically install
+- Packer (plugin manager) - Will automatically install (maybt not):
+  - <https://github.com/wbthomason/packer.nvim>
 
 ## TODO:
 
@@ -13,3 +12,5 @@ update: nvm, i have fixed my setup, i will revisit this soon:tm:
 - [ ] Setting Options
 - [ ] StatusLine
 - [ ] Smooth(er) scrolling
+
+- [ ] which key
