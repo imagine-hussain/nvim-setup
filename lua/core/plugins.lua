@@ -80,7 +80,7 @@ local plugin_table = {
 
   -- Close buffers without destroying the window
   ["famiu/bufdelete.nvim"] = {
-    cmd = { "Bdelete", "Bwipeout" },
+    -- cmd = { "Bdelete", "Bwipeout" },
   },
   -- Bufferline
   ["akinsho/bufferline.nvim"] = {

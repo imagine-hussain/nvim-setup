@@ -39,3 +39,8 @@ end
 function utils.print_err(err)
     vim.api.nvim_err_writeln(err)
 end
+
+function utils.plugin_exists(plugin)
+    -- `packer_plugins` will be global defined by packer
+    return packer_plugins ~= nil and packer_plugins[plugin] ~= nil
+end

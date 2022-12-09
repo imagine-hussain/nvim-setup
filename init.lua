@@ -8,8 +8,8 @@ end
 
 local function main()
   for _, source_file in ipairs {
-    "core.settings",
     "core.plugins",
+    "core.settings",
     "core.mappings",
     "core.colours",
   } do
