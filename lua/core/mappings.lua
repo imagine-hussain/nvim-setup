@@ -30,17 +30,10 @@ maps.n["<leader>pu"] = { "<cmd>PackerUpdate<cr>" }
 -- Buffer Deletion: Using BufDelete to not mess up window management
 maps.n["<leader>c"] = { "<cmd>Bdelete<cr>" }
 
--- From repo readme:
--- Forcibly delete current buffer
--- require('bufdelete').bufdelete(0, true)
-
--- -- Wipeout buffer number 100 without force
--- require('bufdelete').bufwipeout(100)
-
--- -- Delete every buffer from buffer 7 to buffer 30 without force
--- require('bufdelete').bufdelete({7, 30})
-
--- -- Delete buffer matching foo.txt with force
--- require('bufdelete').bufdelete("foo.txt", true)
+-- Bufferline - move between buffers
+maps.n["<S-l>"] = { "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer tab" }
+maps.n["<S-h>"] = { "<cmd>BufferLineCyclePrev<cr>", desc = "Previous buffer tab" }
+maps.n[">b"] = { "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer tab right" }
+maps.n["<b"] = { "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer tab left" }
 
 utils.apply_mappings(maps)
