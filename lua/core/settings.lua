@@ -1,6 +1,7 @@
 local settings_table = {
     -- Options Settings; Equiv to `set key = value`
     opt = {
+        termguicolors = true, -- Allow 24bit colors
         copyindent = true, -- Copy the previous indentation on autoindenting
         history = 500, -- Size of history stored
         ignorecase = true, -- Case insensitive searching
@@ -8,12 +9,14 @@ local settings_table = {
         relativenumber = true, -- Show relative numberline
     },
     -- Global vars / Settings; Equiv to `let g:key = value`
-    -- g = {
-    -- }
+    g = {
+        mapleader = " ", -- Leader - global
+    }
 }
 
-local function dump(o)
-    if type(o) == 'table' then
+utils.print_err("in settings")
+
+local function dump(o) if type(o) == 'table' then
        local s = '{ '
        for k,v in pairs(o) do
           if type(k) ~= 'number' then k = '"'..k..'"' end
@@ -28,15 +31,6 @@ end
 -- print("TABLE DUMP:" .. dump(settings_table))
 
 
-local function load_settings(settings)
-    -- vim.api.nvim_err_writeln(settings.toString())
-    for scope, option_list in ipairs(settings) do
-        vim.api.nvim_err_writeln("HERE")
-        for setting, value in pairs(option_list) do
-            print(setting .. value .. "\n")
-            vim[scope][setting] = value
-        end
-    end
-end
+utils.apply_settings(settings_table)
 
-load_settings(settings_table)
+utils.print_err("finish settings")

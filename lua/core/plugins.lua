@@ -1,4 +1,4 @@
-local utils = require "configs.utils"
+-- local utils = require "configs.utils"
 local add_cmp_source = utils.add_cmp_source
 
 local plugin_table = {
@@ -174,13 +174,13 @@ local plugin_table = {
   -- Built-in LSP
   ["neovim/nvim-lspconfig"] = { event = "VimEnter" },
   -- Lsp Installer
-  ["williamboman/nvim-lsp-installer"] = {
-    after = "nvim-lspconfig",
-    config = function()
-      require "configs.nvim-lsp-installer"
-      require "configs.lsp"
-    end,
-  },
+  -- ["williamboman/nvim-lsp-installer"] = {
+  --   after = "nvim-lspconfig",
+  --   config = function()
+  --     -- require "configs.nvim-lsp-installer"
+  --     -- require "configs.lsp"
+  --   end,
+  -- },
 
 
 
@@ -237,4 +237,5 @@ end
 local packer = init_packer()
 
 init_plugins(packer)
-require ("configs.cmp")
+-- require ("configs.cmp")
+utils.print_err("finish plugs")
